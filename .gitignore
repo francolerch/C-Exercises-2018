@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Folders
+
+Class1/.vs/*
+Class1/Class1/Class1.vcxproj.user
+Class1/Class1/Debug/*
