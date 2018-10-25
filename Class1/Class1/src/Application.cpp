@@ -38,11 +38,12 @@ namespace cpp_class1 {
 		cpp_class1_funtest::TestIsBetweenMath();
 		cpp_class1_funtest::TestClampMath();
 		cpp_class1_funtest::TestNearestNumberMath();
+
+		std::cin.get();
 	}
 }
 
 int main() {
 	cpp_class1::tests();
-	std::cin.get();
 	return 0;
 };

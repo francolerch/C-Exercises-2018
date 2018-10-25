@@ -33,6 +33,7 @@
 
 # Folders
 
-Class1/.vs/*
-Class1/Class1/Class1.vcxproj.user
-Class1/Class1/Debug/*
+*/.vs/
+*.vcxproj.user
+*/*/Debug/
+*/Debug/
