@@ -1,8 +1,4 @@
-#include <iostream>
 #include "Utils.h"
-#include <limits>
-
-#define print(x) std::cout << x << std::endl;
 
 namespace cpp_class2 {
 	template<typename T>
@@ -40,7 +36,5 @@ namespace cpp_class2 {
 		printUtil<float>();
 		print("double");
 		printUtil<double>();
-
-		std::cin.get();
 	};
 };
