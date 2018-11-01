@@ -8,4 +8,6 @@
 namespace cpp_class2_test {
 	void testReverseArray();
 	void testTruncateArray();
+	void testXorArrays();
+	void testMultiplyArrays();
 }

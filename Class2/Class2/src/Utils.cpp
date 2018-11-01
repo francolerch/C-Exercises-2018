@@ -14,8 +14,8 @@ namespace cpp_class2 {
 	void printUtil<char>()
 	{
 		print("Size: " << sizeof(char) << " byte");
-		print("Min Value: " << (int)std::numeric_limits<char>::min() << " bytes");
-		print("Max Value: " << (int)std::numeric_limits<char>::max() << " bytes");
+		print("Min Value: " << static_cast<int>(std::numeric_limits<char>::min()) << " bytes");
+		print("Max Value: " << static_cast<int>(std::numeric_limits<char>::max()) << " bytes");
 		std::cout << std::endl;
 	};
 
