@@ -11,6 +11,9 @@ int main() {
 	cpp_class2_test::testReverseArray();
 	cpp_class2_test::testXorArrays();
 	cpp_class2_test::testMultiplyArrays();
+	cpp_class2_test::testMergeSortedArray();
+	cpp_class2_test::testGetPrimeCount();
+
 	std::cin.get();
 	return 0;
 };

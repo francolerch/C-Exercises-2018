@@ -42,4 +42,66 @@ namespace cpp_class2 {
 			arrayToReturn[i] = static_cast<double>(array1[i] * array2[i]);
 		}
 	};
+
+	void mergeSortedArray(unsigned int array1[10], unsigned int array2[10], unsigned int array3[20])
+	{
+		int size = 20;
+		bool sorted = false;
+
+		for (int i = 0; i < 10; i++)
+		{
+			array3[i] = array1[i];
+		}
+		for (int i = 0; i < 10; i++)
+		{
+			array3[i + 10] = array2[i];
+		}
+
+		while (!sorted) {
+			bool swap = false;
+
+			for (int i = 0; i < size - 1; i++)
+			{
+
+				if (array3[i] > array3[i + 1])
+				{
+					int temp = array3[i];
+					array3[i] = array3[i + 1];
+					array3[i + 1] = temp;
+					swap = true;
+				}
+			}
+
+			if (!swap)
+			{
+				sorted = true;
+			}
+		}
+	};
+
+	unsigned int getPrimeCount(unsigned int array[10])
+	{
+		unsigned int size = 10;
+		unsigned int count = 0;
+
+		for (unsigned int i = 0; i < size; ++i)
+		{
+			bool isPrime = true;
+
+			for (unsigned int j = 2; j < array[i] / 2; j++)
+			{
+
+				if (array[i] % j == 0)
+				{
+					isPrime = false;
+					break;
+				}
+			}
+
+			if (isPrime == true) {
+				count++;
+			}
+		}
+		return count;
+	};
 };

@@ -10,4 +10,6 @@ namespace cpp_class2_test {
 	void testTruncateArray();
 	void testXorArrays();
 	void testMultiplyArrays();
+	void testMergeSortedArray();
+	void testGetPrimeCount();
 }

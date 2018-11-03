@@ -85,4 +85,35 @@ namespace cpp_class2_test {
 
 		print("testMultiplyArrays Test Passed");
 	};
+
+	void testMergeSortedArray()
+	{
+		unsigned int input1[10] = { 5, 8, 13, 20, 25, 99, 105, 110, 150, 151 };
+		unsigned int input2[10] = { 2, 15, 64, 80, 85, 90, 106, 125, 140, 199 };
+		unsigned int input3[20];
+
+		cpp_class2::mergeSortedArray(input1, input2, input3);
+
+		for (int i = 0; i < 9; i++)
+		{
+			assert(input1[i] < input1[i + 1]);
+			assert(input2[i] < input2[i + 1]);
+		}
+
+		for (int i = 0; i < 19; i++)
+		{
+			assert(input3[i] < input3[i + 1]);
+		}
+
+		print("testMergeSortedArray Test Passed");
+	};
+
+	void testGetPrimeCount()
+	{
+		unsigned int input[10] = { 2, 15, 17, 3, 10, 90, 103, 125, 151, 127};
+
+		assert(cpp_class2::getPrimeCount(input) == 6);
+
+		print("testGetPrimeCount Test Passed");
+	};
 }
