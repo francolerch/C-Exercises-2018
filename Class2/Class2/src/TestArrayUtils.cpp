@@ -116,4 +116,13 @@ namespace cpp_class2_test {
 
 		print("testGetPrimeCount Test Passed");
 	};
+
+	void testGetPowerOfTwoCount()
+	{
+		unsigned int input[10] = { 2, 15, 128, 3, 10, 8, 103, 125, 64, 127 };
+
+		assert(cpp_class2::getPowerOfTwoCount(input) == 4);
+
+		print("testGetPowerOfTwoCount Test Passed");
+	};
 }

@@ -12,4 +12,5 @@ namespace cpp_class2_test {
 	void testMultiplyArrays();
 	void testMergeSortedArray();
 	void testGetPrimeCount();
+	void testGetPowerOfTwoCount();
 }

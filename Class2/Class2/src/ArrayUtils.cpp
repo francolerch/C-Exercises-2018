@@ -98,10 +98,34 @@ namespace cpp_class2 {
 				}
 			}
 
-			if (isPrime == true) {
+			if (isPrime == true)
+			{
 				count++;
 			}
 		}
 		return count;
 	};
+
+	unsigned int getPowerOfTwoCount(unsigned int array[10])
+	{
+		unsigned int size = 10;
+		unsigned int count = 0;
+
+		for (unsigned int i = 0; i < size; ++i)
+		{
+			bool isPowerOfTwo = false;
+			unsigned int number = array[i];
+
+			if (((number != 0) && ((number &(number - 1)) == 0)))
+			{
+				isPowerOfTwo = true;
+			}
+
+			if (isPowerOfTwo)
+			{
+				count++;
+			}
+		}
+		return count;
+	}
 };

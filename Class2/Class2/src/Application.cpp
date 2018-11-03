@@ -5,6 +5,7 @@
 
 int main() {
 	cpp_class2::printSizes();
+
 	cpp_class2_test::testAreEqualDouble();
 	cpp_class2_test::testAreEqualFloat();
 	cpp_class2_test::testTruncateArray();
@@ -13,6 +14,7 @@ int main() {
 	cpp_class2_test::testMultiplyArrays();
 	cpp_class2_test::testMergeSortedArray();
 	cpp_class2_test::testGetPrimeCount();
+	cpp_class2_test::testGetPowerOfTwoCount();
 
 	std::cin.get();
 	return 0;
