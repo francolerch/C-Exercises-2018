@@ -19,20 +19,20 @@ namespace cpp_class1 {
 		return DOUBLE_PI;
 	};
 
-	int GetAbsoluteValue(const int &number) {
+	int GetAbsoluteValue(const int number) {
 		if (number >= 0)
 			return number;
 		else return number * (-1);
 	};
 
-	float GetPow2(const int &number) {
-		return number * number;
+	float GetPow2(const int number) {
+		return static_cast<float>(number) * number;
 	};
 
-	float GetSqrt(const int &number) {
-		double low = 0;
-		double high = number;
-		double mid;
+	float GetSqrt(const int number) {
+		float low = 0;
+		float high = static_cast<float>(number);
+		float mid;
 
 		while (high - low > 0.0000001) {
 			mid = low + (high - low) / 2;
@@ -46,52 +46,56 @@ namespace cpp_class1 {
 		return mid;
 	};
 
-	unsigned int GetFact(const unsigned int &number) {
+	unsigned int GetFact(const unsigned int number) {
 		if (number == 0)
 			return 1;
-		else
-			return number * GetFact(number - 1);
-	}
+		else {
+			unsigned int total = number;
 
-	int Min(const int &number1, const int &number2) {
+			for (unsigned int i = 0; i < number; i++)
+			{
+				total = total * number - i;
+			};
+
+			return total;
+		}
+	};
+
+	int Min(const int number1, const int number2) {
 		if (number1 >= number2)
 			return number2;
 		return number1;
 	};
 
-	int Max(const int &number1, const int &number2) {
+	int Max(const int number1, const int number2) {
 		if (number1 <= number2)
 			return number2;
 		return number1;
 	}
 
-	int Mod(const int &number1, const int &number2) {
+	int Mod(const int number1, const int number2) {
 		return GetAbsoluteValue(number1 - number2);
 	}
 
-	bool IsOdd(const int &number1) {
-		if (number1 % 2 != 0)
-			return true;
-		return false;
+	bool IsOdd(const int number1) {
+		return (number1 % 2 != 0);
 	};
 
-	bool IsEven(const int &number1) {
+	bool IsEven(const int number1) {
 		return !IsOdd(number1);
 	};
 
-	int IsBetween(const int &number1, const int &number2, const int &numberToTest) {
-		if (numberToTest < Max(number1, number2) && numberToTest > Min(number1, number2))
-			return true;
-		return false;
+	int IsBetween(const int number1, const int number2, const int numberToTest) {
+		return (numberToTest < Max(number1, number2) && numberToTest > Min(number1, number2));
 	};
 
-	int NearestNumber(const int &number1, const int &number2, const int &numberToTest) {
+	int NearestNumber(const int number1, const int number2, const int numberToTest) {
 		if (Mod(number1, numberToTest) >= Mod(number2, numberToTest))
 			return number2;
 		return number1;
 	};
 
-	int Clamp(const int &number1, const int &number2, const int &numberToTest) {
+	int Clamp(const int number1, const int number2, const int numberToTest) {
 		if (IsBetween(number1, number2, numberToTest)) {
 			return numberToTest;
 		}

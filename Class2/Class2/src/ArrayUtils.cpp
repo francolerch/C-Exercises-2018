@@ -51,9 +51,6 @@ namespace cpp_class2 {
 		for (int i = 0; i < 10; i++)
 		{
 			array3[i] = array1[i];
-		}
-		for (int i = 0; i < 10; i++)
-		{
 			array3[i + 10] = array2[i];
 		}
 
@@ -62,10 +59,11 @@ namespace cpp_class2 {
 
 			for (int i = 0; i < size - 1; i++)
 			{
+				int temp;
 
 				if (array3[i] > array3[i + 1])
 				{
-					int temp = array3[i];
+					temp = array3[i];
 					array3[i] = array3[i + 1];
 					array3[i + 1] = temp;
 					swap = true;
@@ -113,15 +111,9 @@ namespace cpp_class2 {
 
 		for (unsigned int i = 0; i < size; ++i)
 		{
-			bool isPowerOfTwo = false;
 			unsigned int number = array[i];
 
 			if (((number != 0) && ((number &(number - 1)) == 0)))
-			{
-				isPowerOfTwo = true;
-			}
-
-			if (isPowerOfTwo)
 			{
 				count++;
 			}
