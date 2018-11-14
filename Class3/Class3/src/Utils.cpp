@@ -147,6 +147,9 @@ namespace cpp_class3 {
 	}
 	bool areConsecutives(const int* array1, const int* array2, const unsigned int size1, const unsigned int size2)
 	{
+		assert(array1 != nullptr);
+		assert(array2 != nullptr);
+
 		bool isConsecutive = false;
 
 		for (unsigned int i = 0; i < (size1 - 1); i++)
@@ -166,5 +169,21 @@ namespace cpp_class3 {
 		}
 
 		return (array1[size1 - 1] == (array2[0] - 1));
+	}
+	bool isReverseOf(short int* array1, short int* array2, const unsigned int size1, const unsigned int size2)
+	{
+		assert(array1 != nullptr);
+		assert(array2 != nullptr);
+
+		if (size1 != size2)
+			return false;
+
+		for (unsigned int i = 0; i < size1; i++)
+		{
+			if (array1[i] != array2[size2 - i - 1])
+				return false;
+		}
+
+		return true;
 	}
 }

@@ -10,6 +10,7 @@ int main()
 	cpp_class3_test::testToggleCharCase();
 	cpp_class3_test::testParitySort();
 	cpp_class3_test::testAreConsecutives();
+	cpp_class3_test::testIsReverseOf();
 
 	std::cin.get();
 	return 0;

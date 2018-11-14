@@ -28,7 +28,6 @@ namespace cpp_class3_test
 		int evenArrayTest[] = { 74, 72, 24, 20, 16, 10, 2 };
 		int oddArrayTest[] = { 15, 15, 5 };
 
-		
 		int evenArray[7]; // I do this because I don't want to use std::vector to resize the array nor
 		int oddArray[3];  // alloc manually every time a new index is needed. I think it should suffice for now.
 
@@ -72,5 +71,31 @@ namespace cpp_class3_test
 		assert(results == false);
 
 		std::cout << "testAreConsecutives Test Passed" << std::endl;
+	}
+
+	void testIsReverseOf()
+	{
+		const unsigned int size1 = 3;
+		const unsigned int size2 = 4;
+
+		short int inputArray1[] = { 1, 2, 3 };
+		short int inputArray2[] = { 3, 2, 1};
+		short int inputArray3[] = { 1, 2, 4 };
+		short int inputArray4[] = { 4, 2, 1, 0 };
+		short int inputArray5[] = { 1, 2, 3 };
+
+		bool results = cpp_class3::isReverseOf(inputArray1, inputArray2, size1, size1);
+
+		assert(results);
+
+		results = cpp_class3::isReverseOf(inputArray3, inputArray4, size1, size2);
+
+		assert(results == false);
+
+		results = cpp_class3::isReverseOf(inputArray5, inputArray5, size1, size1);
+
+		assert(results == false);
+
+		std::cout << "testIsReverseOf Test Passed" << std::endl;
 	}
 }
