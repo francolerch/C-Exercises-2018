@@ -7,4 +7,5 @@ namespace cpp_class3 {
 	void printCharAray();
 	void printIntAray();
 	void toggleCharCase(char* pointer, unsigned int size);
+	void paritySort(int* inputArray, unsigned int size, int* evenArray, int* oddArray);
 }

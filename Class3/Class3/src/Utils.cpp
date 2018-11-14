@@ -13,8 +13,8 @@ namespace cpp_class3 {
 	{
 		assert(pointer != nullptr);
 		bool isInt = (type == INT);
-		
-		for (unsigned int i = 0; i < size ; i++)
+
+		for (unsigned int i = 0; i < size; i++)
 		{
 			if (isInt)
 				reinterpret_cast<int*>(pointer)[i] = std::rand() % type;
@@ -59,7 +59,7 @@ namespace cpp_class3 {
 		for (unsigned int i = 0; i < size; i++)
 		{
 			std::cout << array[i];
-			
+
 			if (i < size - 1)
 				std::cout << ", ";
 		}
@@ -67,18 +67,82 @@ namespace cpp_class3 {
 	}
 	void toggleCharCase(char* pointer, unsigned int size)
 	{
+		assert(pointer != nullptr);
+
 		const char CASE_DIFFERENCE = 32;
 
-		for (unsigned int i = 0 ; i < size ; i++)
+		for (unsigned int i = 0; i < size; i++)
 		{
-			if (pointer[i] > 64 && pointer[i] < 91)
+			if ((pointer[i] > 64 && pointer[i] < 91) || (pointer[i] > 96 && pointer[i] < 123))
 			{
-				pointer[i] = pointer[i] + CASE_DIFFERENCE;
-			}
-			else if (pointer[i] > 96 && pointer[i] < 123) 
-			{
-				pointer[i] = pointer[i] - CASE_DIFFERENCE;
+				pointer[i] ^= ' ';
 			}
 		}
+	}
+	void paritySort(int* inputArray, unsigned int size, int* evenArray, int* oddArray)
+	{
+		assert(inputArray != nullptr);
+		assert(evenArray != nullptr);
+		assert(oddArray != nullptr);
+
+		unsigned int evenArraySize = 0, oddArraySize = 0;
+		bool sorted = false;
+
+		for (unsigned int i = 0; i < size; i++)
+		{
+			if ((inputArray[i] & 1) != 1)
+			{
+				evenArray[evenArraySize] = inputArray[i];
+				evenArraySize++;
+			}
+			else
+			{
+				oddArray[oddArraySize] = inputArray[i];
+				oddArraySize++;
+			}
+		}
+
+		while (!sorted)
+		{
+			bool swap = false;
+
+			for (unsigned int i = 0; i < evenArraySize - 1; i++)
+			{
+				if (evenArray[i] < evenArray[i + 1])
+				{
+					evenArray[i] ^= evenArray[i + 1];
+					evenArray[i + 1] ^= evenArray[i];
+					evenArray[i] ^= evenArray[i + 1];
+					swap = true;
+				}
+			}
+
+			if (!swap)
+			{
+				sorted = true;
+			}
+		}
+
+		sorted = false;
+
+		while (!sorted)
+		{
+			bool swap = false;
+
+			for (unsigned int i = 0; i < oddArraySize - 1; i++)
+			{
+				if (oddArray[i] < oddArray[i + 1])
+				{
+					oddArray[i] ^= oddArray[i + 1];
+					oddArray[i + 1] ^= oddArray[i];
+					oddArray[i] ^= oddArray[i + 1];
+				}
+			}
+			if (!swap)
+			{
+				sorted = true;
+			}
+		}
+
 	}
 }
