@@ -33,7 +33,7 @@ namespace cpp_class3 {
 
 		fillArray(p_Array, size, Type::CHAR);
 
-		std::cout << "[";
+		std::cout << "[ ";
 
 		for (unsigned int i = 0; i < size; i++)
 		{
@@ -42,7 +42,7 @@ namespace cpp_class3 {
 			if (i < size - 1)
 				std::cout << ", ";
 		}
-		std::cout << "]" << std::endl;
+		std::cout << " ]" << std::endl;
 	}
 	void printIntAray()
 	{
@@ -54,7 +54,7 @@ namespace cpp_class3 {
 
 		fillArray(p_Array, size, Type::INT);
 
-		std::cout << "[";
+		std::cout << "[ ";
 
 		for (unsigned int i = 0; i < size; i++)
 		{
@@ -63,6 +63,22 @@ namespace cpp_class3 {
 			if (i < size - 1)
 				std::cout << ", ";
 		}
-		std::cout << "]" << std::endl;
+		std::cout << " ]" << std::endl;
+	}
+	void toggleCharCase(char* pointer, unsigned int size)
+	{
+		const char CASE_DIFFERENCE = 32;
+
+		for (unsigned int i = 0 ; i < size ; i++)
+		{
+			if (pointer[i] > 64 && pointer[i] < 91)
+			{
+				pointer[i] = pointer[i] + CASE_DIFFERENCE;
+			}
+			else if (pointer[i] > 96 && pointer[i] < 123) 
+			{
+				pointer[i] = pointer[i] - CASE_DIFFERENCE;
+			}
+		}
 	}
 }
