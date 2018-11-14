@@ -186,4 +186,18 @@ namespace cpp_class3 {
 
 		return true;
 	}
+	bool areThereDuplicates(int* array1, const unsigned int size)
+	{
+		for (unsigned int i = 0; i < size; i++)
+		{
+			for (unsigned int j = 0; j < size; j++)
+			{
+				if (i != j) {
+					if (array1[i] == array1[j])
+						return true;
+				}
+			}
+		}
+		return false;
+	}
 }

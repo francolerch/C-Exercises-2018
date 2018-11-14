@@ -98,4 +98,22 @@ namespace cpp_class3_test
 
 		std::cout << "testIsReverseOf Test Passed" << std::endl;
 	}
+
+	void testAreThereDuplicates()
+	{
+		const unsigned int size = 3;
+
+		int inputArray1[] = { 1, 2, 3 };
+		int inputArray2[] = { 1, 2, 2 };
+
+		bool results = cpp_class3::areThereDuplicates(inputArray1, size);
+
+		assert(results == false);
+
+		results = cpp_class3::areThereDuplicates(inputArray2, size);
+
+		assert(results);
+
+		std::cout << "testAreThereDuplicates Test Passed" << std::endl;
+	}
 }

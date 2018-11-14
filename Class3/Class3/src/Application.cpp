@@ -11,6 +11,7 @@ int main()
 	cpp_class3_test::testParitySort();
 	cpp_class3_test::testAreConsecutives();
 	cpp_class3_test::testIsReverseOf();
+	cpp_class3_test::testAreThereDuplicates();
 
 	std::cin.get();
 	return 0;
