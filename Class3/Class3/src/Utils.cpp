@@ -145,4 +145,26 @@ namespace cpp_class3 {
 		}
 
 	}
+	bool areConsecutives(const int* array1, const int* array2, const unsigned int size1, const unsigned int size2)
+	{
+		bool isConsecutive = false;
+
+		for (unsigned int i = 0; i < (size1 - 1); i++)
+		{
+			isConsecutive = ( array1[i] + 1 == array1[i + 1] );
+			
+			if (!isConsecutive)
+				return false;
+		}
+
+		for (unsigned int i = 0; i < (size2 - 1); i++)
+		{
+			isConsecutive = (array2[i] + 1 == array2[i + 1]);
+
+			if (!isConsecutive)
+				return false;
+		}
+
+		return (array1[size1 - 1] == (array2[0] - 1));
+	}
 }

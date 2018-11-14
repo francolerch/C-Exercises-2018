@@ -47,4 +47,30 @@ namespace cpp_class3_test
 		std::cout << "testParitySort Test Passed" << std::endl;
 	}
 
+	void testAreConsecutives()
+	{
+		const unsigned int size1 = 3;
+		const unsigned int size2 = 5;
+
+		int inputArray1[] = { 1, 2, 3 };
+		int inputArray2[] = { 4, 5, 6, 7, 8 };
+		int inputArray3[] = { 1, 2, 4 };
+		int inputArray4[] = { 4, 5, 2, 7, 8 };
+		int inputArray5[] = { 1, 2, 3 };
+		int inputArray6[] = { 5, 6, 7, 8, 9 };
+
+		bool results = cpp_class3::areConsecutives(inputArray1, inputArray2, size1, size2);
+
+		assert(results);
+
+		results = cpp_class3::areConsecutives(inputArray3, inputArray4, size1, size2);
+
+		assert(results == false);
+		
+		results = cpp_class3::areConsecutives(inputArray5, inputArray6, size1, size2);
+
+		assert(results == false);
+
+		std::cout << "testAreConsecutives Test Passed" << std::endl;
+	}
 }

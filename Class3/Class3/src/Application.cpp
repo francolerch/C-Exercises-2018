@@ -9,6 +9,7 @@ int main()
 
 	cpp_class3_test::testToggleCharCase();
 	cpp_class3_test::testParitySort();
+	cpp_class3_test::testAreConsecutives();
 
 	std::cin.get();
 	return 0;
