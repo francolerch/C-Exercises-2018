@@ -1,6 +1,5 @@
 #include "TestUtils.h"
 #include <iostream>
-#include <time.h>
 
 int main()
 {
