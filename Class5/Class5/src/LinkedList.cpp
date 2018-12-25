@@ -64,28 +64,15 @@ namespace cpp_class5
 	unsigned int getElementCount(Node * pointer)
 	{
 		unsigned int count = 0;
+		Node* temp = pointer;
 
-		if (pointer)
+		while (temp && temp->data)
 		{
 			count++;
-
-			if (pointer->next)
-			{
-				count++;
-				getElementCountHelper(pointer->next, count);
-			}
+			temp = temp->next;
 		}
 
 		return count;
-	}
-
-	static void getElementCountHelper(Node * pointer, unsigned int &count)
-	{
-		if (pointer->next)
-		{
-			count++;
-			getElementCountHelper(pointer->next, count);
-		}
 	}
 
 	/*
