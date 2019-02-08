@@ -74,19 +74,19 @@ namespace cpp_class1_funtest {
 	};
 
 	void TestIsOddMath() {
-		assert(IsOdd(5) == true);
+		assert(IsOdd(5));
 		assert(IsOdd(2) == false);
 		std::cout << "TestIsOddMath Test Passed" << std::endl;
 	};
 
 	void TestIsEvenMath() {
 		assert(IsEven(5) == false);
-		assert(IsEven(2) == true);
+		assert(IsEven(2));
 		std::cout << "TestIsEvenMath Test Passed" << std::endl;
 	};
 
 	void TestIsBetweenMath() {
-		assert(IsBetween(5, 10, 9) == true);
+		assert(IsBetween(5, 10, 9));
 		assert(IsBetween(5, 10, 15) == false);
 		std::cout << "TestIsBetweenMath Test Passed" << std::endl;
 	};

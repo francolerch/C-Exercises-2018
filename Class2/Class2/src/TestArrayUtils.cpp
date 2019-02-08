@@ -88,8 +88,8 @@ namespace cpp_class2_test {
 
 	void testMergeSortedArray()
 	{
-		unsigned int input1[10] = { 5, 8, 13, 20, 25, 99, 105, 110, 150, 151 };
-		unsigned int input2[10] = { 2, 15, 64, 80, 85, 90, 106, 125, 140, 199 };
+		unsigned int input1[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		unsigned int input2[10] = { 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
 		unsigned int input3[20];
 
 		cpp_class2::mergeSortedArray(input1, input2, input3);
