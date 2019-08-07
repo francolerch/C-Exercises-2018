@@ -24,9 +24,9 @@ namespace cpp_class8 {
 		inline size_t GetSize() const { return m_Size; };
 
 		int& operator[](const size_t index);
-		const DynamicArray& operator+=(const DynamicArray& arr);
-		const DynamicArray& operator+(const DynamicArray& arr);
-		const bool operator==(const DynamicArray& arr) const;
-		const bool operator!=(const DynamicArray& arr) const;
+		DynamicArray& operator+=(const DynamicArray& arr);
+		DynamicArray& operator+(const DynamicArray& arr);
+		bool operator==(const DynamicArray& arr) const;
+		bool operator!=(const DynamicArray& arr) const;
 	};
 }

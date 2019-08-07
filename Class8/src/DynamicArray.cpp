@@ -39,7 +39,7 @@ namespace cpp_class8 {
 		return m_DynamicArray[index];
 	}
 
-	const DynamicArray& DynamicArray::operator+=(const DynamicArray& arr)
+	DynamicArray& DynamicArray::operator+=(const DynamicArray& arr)
 	{
 		int* concat = new int[m_Size + arr.m_Size];
 
@@ -58,7 +58,7 @@ namespace cpp_class8 {
 		return *this;
 	}
 
-	const DynamicArray& DynamicArray::operator+(const DynamicArray& arr)
+	DynamicArray& DynamicArray::operator+(const DynamicArray& arr)
 	{
 		DynamicArray *clone = new DynamicArray(m_Size + arr.m_Size);
 
@@ -75,7 +75,7 @@ namespace cpp_class8 {
 		return *clone;
 	}
 
-	const bool DynamicArray::operator==(const DynamicArray& arr) const
+	bool DynamicArray::operator==(const DynamicArray& arr) const
 	{
 		if (m_Size != arr.m_Size) return false;
 
@@ -88,7 +88,7 @@ namespace cpp_class8 {
 		return true;
 	}
 
-	const bool DynamicArray::operator!=(const DynamicArray& arr) const
+	bool DynamicArray::operator!=(const DynamicArray& arr) const
 	{
 		return !operator==(arr);
 	}
