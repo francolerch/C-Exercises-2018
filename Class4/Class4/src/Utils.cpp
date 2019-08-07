@@ -38,31 +38,30 @@ namespace cpp_class4
 		std::string name;
 
 		switch (input) {
-		case 0:
+		case CPP:
 			name = "Bjarne Stroustrup";
 			break;
-		case 1:
+		case C:
 			name = "Dennis Ritchie";
 			break;
-		case 2:
+		case JAVA:
 			name = "James Gosling";
 			break;
-		case 3:
+		case PYTHON:
 			name = "Guido van Rossum";
 			break;
-		case 4:
+		case COBOL:
 			name = "CODASYL";
 			break;
-		case 5:
+		case CSHARP:
 			name = "Microsoft";
 			break;
-		case 6:
+		case HTML:
 			name = "Tim Berners-Lee";
 			break;
-		case 7:
+		case RUBY:
 			name = "Yukihiro Matsumoto";
 			break;
-
 		}
 
 		return name;

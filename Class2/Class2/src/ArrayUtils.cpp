@@ -1,4 +1,5 @@
 #include "ArrayUtils.h"
+#include "Utils.h"
 
 namespace cpp_class2 {
 	void reverseArray(int array[10])
@@ -86,7 +87,9 @@ namespace cpp_class2 {
 		{
 			bool isPrime = true;
 
-			for (unsigned int j = 2; j < array[i] / 2; j++)
+			float pow2 = GetSqrt(array[i]);
+
+			for (unsigned int j = 2; j < pow2; j++)
 			{
 
 				if (array[i] % j == 0)

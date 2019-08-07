@@ -5,7 +5,7 @@
 namespace cpp_class5
 {
 	Node* createList(float data) {
-		struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
+		struct Node* new_node = static_cast<Node*>(malloc(sizeof(Node)));
 		new_node->data = data;
 		new_node->next = nullptr;
 		return new_node;
@@ -23,7 +23,7 @@ namespace cpp_class5
 			}
 			
 		}
-		struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
+		struct Node* new_node = static_cast<Node*>(malloc(sizeof(Node)));
 		new_node->data = data;
 		new_node->next = nullptr;
 		temp->next = new_node;
@@ -52,6 +52,8 @@ namespace cpp_class5
 
 	void clear(Node *& pointer)
 	{
+		assert(pointer);
+
 		while (pointer->next)
 		{
 			pop_back(pointer);

@@ -6,6 +6,7 @@
 
 namespace cpp_class2 {
 	void printSizes();
+	float GetSqrt(const int number);
 
 	template<typename T>
 	bool areEqual(const T &num1, const T &num2)

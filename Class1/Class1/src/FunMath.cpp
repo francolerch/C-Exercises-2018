@@ -35,7 +35,9 @@ namespace cpp_class1 {
 		float mid;
 
 		while (high - low > 0.0000001) {
-			mid = low + (high - low) / 2;
+			mid = low + (high - low) / 2.0f;
+			if (mid * mid == number)
+				break;
 			if (mid*mid > number) {
 				high = mid;
 			}
@@ -52,9 +54,9 @@ namespace cpp_class1 {
 		else {
 			unsigned int total = number;
 
-			for (unsigned int i = 0; i < number; i++)
+			for (unsigned int i = 1; i < number; i++)
 			{
-				total = total * number - i;
+				total = total * (number - i);
 			};
 
 			return total;

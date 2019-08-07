@@ -33,7 +33,7 @@
 
 # Folders
 
-*/.vs/
+*.vs/
 *.vcxproj.user
 */*/Debug/
 */Debug/

@@ -1,64 +1,60 @@
 #include "Utils.h"
-#include <stdlib.h>
-#include <assert.h>
-#include <iostream>
+
 
 namespace cpp_class3 {
-	enum Type {
-		CHAR = CHAR_MAX,
-		INT = INT_MAX
-	};
 
 	void fillArray(void* pointer, const unsigned int size, const Type type)
 	{
 		assert(pointer != nullptr);
-		bool isInt = (type == INT);
-
-		for (unsigned int i = 0; i < size; i++)
+		
+		if (type == Type::INT)
 		{
-			if (isInt)
-				reinterpret_cast<int*>(pointer)[i] = std::rand() % type;
-			else
-				reinterpret_cast<char*>(pointer)[i] = std::rand() % type;
+			int* p_Int = reinterpret_cast<int*>(pointer);
+
+			for (unsigned int i = 0; i < size; i++)
+			{
+				p_Int[i] = std::rand() % Type::INT;
+			}
+		} 
+		else
+		{
+			char* p_Char = reinterpret_cast<char*>(pointer);
+
+			for (unsigned int i = 0; i < size; i++)
+			{
+				p_Char[i] = std::rand() % Type::CHAR;
+			}
 		}
 	}
-	void printCharAray()
+
+	void printCharAray(char* p_Array, const unsigned int size)
 	{
-
-		const unsigned int size = 10;
-		char array[size];
-		char* p_Array = array;
-
 		assert(p_Array != nullptr);
 
 		fillArray(p_Array, size, Type::CHAR);
 
-		std::cout << "[ ";
+		std::cout << "Char Array: [ ";
 
 		for (unsigned int i = 0; i < size; i++)
 		{
-			std::cout << array[i];
+			std::cout << p_Array[i];
 
 			if (i < size - 1)
 				std::cout << ", ";
 		}
 		std::cout << " ]" << std::endl;
 	}
-	void printIntAray()
+	void printIntAray(int* p_Array, const unsigned int size)
 	{
-		const unsigned int size = 5;
-		int array[size];
-		int* p_Array = array;
-
 		assert(p_Array != nullptr);
 
 		fillArray(p_Array, size, Type::INT);
 
-		std::cout << "[ ";
+		std::cout << "Int Array: [ ";
 
 		for (unsigned int i = 0; i < size; i++)
 		{
-			std::cout << array[i];
+			std::cout << p_Array[i];
 
 			if (i < size - 1)
 				std::cout << ", ";
@@ -79,26 +75,23 @@ namespace cpp_class3 {
 			}
 		}
 	}
-	void paritySort(int* inputArray, unsigned int size, int* evenArray, int* oddArray)
+	void paritySort(int* inputArray, unsigned int size, int* p_evenCount, int* p_oddCount)
 	{
 		assert(inputArray != nullptr);
-		assert(evenArray != nullptr);
-		assert(oddArray != nullptr);
+		assert(p_evenCount != nullptr);
+		assert(p_oddCount != nullptr);
 
-		unsigned int evenArraySize = 0, oddArraySize = 0;
 		bool sorted = false;
 
 		for (unsigned int i = 0; i < size; i++)
 		{
 			if ((inputArray[i] & 1) != 1)
 			{
-				evenArray[evenArraySize] = inputArray[i];
-				evenArraySize++;
+				(*p_evenCount)++;
 			}
 			else
 			{
-				oddArray[oddArraySize] = inputArray[i];
-				oddArraySize++;
+				(*p_oddCount)++;
 			}
 		}
 
@@ -106,13 +99,13 @@ namespace cpp_class3 {
 		{
 			bool swap = false;
 
-			for (unsigned int i = 0; i < evenArraySize - 1; i++)
+			for (unsigned int i = 0; i < size - 1; i++)
 			{
-				if (evenArray[i] < evenArray[i + 1])
+				if (inputArray[i] < inputArray[i + 1])
 				{
-					evenArray[i] ^= evenArray[i + 1];
-					evenArray[i + 1] ^= evenArray[i];
-					evenArray[i] ^= evenArray[i + 1];
+					inputArray[i] ^= inputArray[i + 1];
+					inputArray[i + 1] ^= inputArray[i];
+					inputArray[i] ^= inputArray[i + 1];
 					swap = true;
 				}
 			}
@@ -122,29 +115,8 @@ namespace cpp_class3 {
 				sorted = true;
 			}
 		}
-
-		sorted = false;
-
-		while (!sorted)
-		{
-			bool swap = false;
-
-			for (unsigned int i = 0; i < oddArraySize - 1; i++)
-			{
-				if (oddArray[i] < oddArray[i + 1])
-				{
-					oddArray[i] ^= oddArray[i + 1];
-					oddArray[i + 1] ^= oddArray[i];
-					oddArray[i] ^= oddArray[i + 1];
-				}
-			}
-			if (!swap)
-			{
-				sorted = true;
-			}
-		}
-
 	}
+
 	bool areConsecutives(const int* array1, const int* array2, const unsigned int size1, const unsigned int size2)
 	{
 		assert(array1 != nullptr);
@@ -188,14 +160,12 @@ namespace cpp_class3 {
 	}
 	bool areThereDuplicates(int* array1, const unsigned int size)
 	{
-		for (unsigned int i = 0; i < size; i++)
+		for (unsigned int i = 0; i < size - 1; i++)
 		{
-			for (unsigned int j = 0; j < size; j++)
+			for (unsigned int j = i + 1; j < size; j++)
 			{
-				if (i != j) {
-					if (array1[i] == array1[j])
-						return true;
-				}
+				if (array1[i] == array1[j])
+					return true;
 			}
 		}
 		return false;

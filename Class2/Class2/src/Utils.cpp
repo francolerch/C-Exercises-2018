@@ -37,4 +37,22 @@ namespace cpp_class2 {
 		print("double");
 		printUtil<double>();
 	};
+
+	float GetSqrt(const int number) {
+		float low = 0;
+		float high = static_cast<float>(number);
+		float mid;
+
+		while (high - low > 0.0000001) {
+			mid = low + (high - low) / 2;
+			if (mid * mid > number) {
+				high = mid;
+			}
+			else {
+				low = mid;
+			}
+		}
+		return mid;
+	};
+
 };

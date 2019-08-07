@@ -41,7 +41,7 @@ namespace cpp_class1_funtest {
 	};
 
 	void TestSqrtMacroMath() {
-		assert(GetSqrt(144) == 12);
+		assert(GetSqrt(144) == 12.0f);
 		assert(GetSqrt(25) == 5);
 		std::cout << "TestSqrtMacroMath Test Passed" << std::endl;
 	};
