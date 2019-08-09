@@ -12,7 +12,7 @@ namespace cpp_class9 {
 	class House
 	{
 		friend cpp_class9_test::TestHouse;
-		friend 	std::ostream& operator<<(std::ostream& os, const House& house);
+		friend std::ostream& operator<<(std::ostream& os, const House& house);
 
 	public:
 		enum Material {
