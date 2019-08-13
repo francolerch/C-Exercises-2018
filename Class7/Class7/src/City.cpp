@@ -11,7 +11,12 @@ namespace cpp_class7 {
 	City::City(const City& city) :
 		m_maxPop(city.m_maxPop), m_lastPop(city.m_lastPop)
 	{
-		m_citizen = new Citizen(*city.m_citizen);
+		m_citizen = new Citizen[m_maxPop];
+
+		for (unsigned int i = 0; i < m_lastPop; i++)
+		{
+			m_citizen[i] = city.m_citizen[i];
+		}
 	}
 
 	City::~City()

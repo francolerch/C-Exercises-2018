@@ -43,6 +43,7 @@ int main()
 	cpp_class7_test::TestCity testCity;
 
 	testCity.TestConstructor();
+	testCity.TestCopyConstructor();
 	testCity.TestAddCitizen();
 	testCity.TestGetRetiredCount();
 	testCity.TestGetChildCount();

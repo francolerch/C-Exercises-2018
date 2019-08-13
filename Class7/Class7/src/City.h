@@ -2,8 +2,13 @@
 #include <iostream>
 #include "Citizen.h"
 
+namespace cpp_class7_test {
+	class TestCity;
+}
+
 namespace cpp_class7 {
 	class City {
+		friend cpp_class7_test::TestCity;
 	public:
 		City(const unsigned int maxPop);
 		City(const City& city);

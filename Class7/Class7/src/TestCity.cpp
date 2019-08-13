@@ -7,12 +7,25 @@ namespace cpp_class7_test {
 	{
 		City testConstructor = City(128);
 
+		assert(testConstructor.m_maxPop == 128);
+		assert(testConstructor.m_citizen != nullptr);
+		assert(testConstructor.m_lastPop == 0);
+
 		std::cout << "TestConstructor Test Passed" << std::endl;
 	}
+
 	void TestCity::TestCopyConstructor()
 	{
+		City test = City(128);
+		City test2(test);
 
+		assert(test2.m_maxPop == test.m_maxPop);
+		assert(test2.m_citizen != nullptr && test2.m_citizen != test.m_citizen);
+		assert(test2.m_lastPop == test.m_lastPop);
+
+		std::cout << "TestCopyConstructor Test Passed" << std::endl;
 	}
+
 	void TestCity::TestAddCitizen()
 	{
 		City testCity = City(1);
@@ -26,6 +39,7 @@ namespace cpp_class7_test {
 
 		std::cout << "TestAddCitizen Test Passed" << std::endl;
 	}
+
 	void TestCity::TestGetRetiredCount()
 	{
 		City testCity = City(3);
@@ -46,6 +60,7 @@ namespace cpp_class7_test {
 
 		std::cout << "TestGetRetiredCount Test Passed" << std::endl;
 	}
+
 	void TestCity::TestGetChildCount()
 	{
 		City testCity = City(3);
@@ -63,6 +78,7 @@ namespace cpp_class7_test {
 
 		std::cout << "TestGetChildCount Test Passed" << std::endl;
 	}
+
 	void TestCity::TestGetManCount()
 	{
 		City testCity = City(3);
@@ -80,6 +96,7 @@ namespace cpp_class7_test {
 
 		std::cout << "TestGetManCount Test Passed" << std::endl;
 	}
+
 	void TestCity::TestGetWomanCount()
 	{
 		City testCity = City(3);
@@ -97,6 +114,7 @@ namespace cpp_class7_test {
 
 		std::cout << "TestGetWomanCount Test Passed" << std::endl;
 	}
+
 	void TestCity::TestGetCitizenByName()
 	{
 		City testCity = City(2);
