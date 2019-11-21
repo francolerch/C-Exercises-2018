@@ -5,7 +5,6 @@ namespace cpp_class9_test {
 }
 
 namespace cpp_class9 {
-
 	class Rectangle {
 		friend cpp_class9_test::TestRectangle;
 
@@ -17,8 +16,8 @@ namespace cpp_class9 {
 		Rectangle(const Rectangle& rectangle)
 			: m_Height(rectangle.m_Height), m_Width(rectangle.m_Width) {};
 
-		inline unsigned int getHeight() const { return m_Height; };
-		inline unsigned int getWidth() const { return m_Width; };
+		unsigned int getHeight() const { return m_Height; };
+		unsigned int getWidth() const { return m_Width; };
 
 		const Rectangle& operator=(const Rectangle& rectangle);
 		unsigned int getArea() const;

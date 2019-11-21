@@ -6,8 +6,7 @@ namespace cpp_class9 {
 		if (this == &window)
 			return *this;
 
-		m_Width = window.m_Width;
-		m_Height = window.m_Height;
+		Rectangle::operator=(window);
 		m_Style = window.m_Style;
 
 		return *this;

@@ -1,7 +1,7 @@
 #include "Character.h"
 
 namespace cpp_class10 {
-	Character& Character::operator=(Character& character)
+	const Character& Character::operator=(Character& character)
 	{
 		if (this == &character)
 			return *this;

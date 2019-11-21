@@ -67,7 +67,6 @@ namespace cpp_class6 {
 		}
 
 		char* placeholderArr = new char[size];
-		assert(placeholderArr != nullptr);
 
 		int lastIndex = 0;
 
@@ -91,7 +90,6 @@ namespace cpp_class6 {
 		}
 
 		char* arrToReturn = new char[lastIndex + 1];
-		assert(arrToReturn != nullptr);
 
 		for (int i = 0; i < lastIndex; i++)
 		{
@@ -116,8 +114,6 @@ namespace cpp_class6 {
 
 		float* placeholderArr = new float[size];
 
-		assert(placeholderArr != nullptr);
-
 		int lastIndex = 0;
 
 		for (unsigned int i = 0; i < size; i++)
@@ -140,8 +136,6 @@ namespace cpp_class6 {
 		}
 
 		float* arrToReturn = new float[lastIndex + 1];
-
-		assert(arrToReturn != nullptr);
 
 		for (int i = 0; i < lastIndex; i++)
 		{

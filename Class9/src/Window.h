@@ -6,13 +6,12 @@ namespace cpp_class9_test {
 }
 
 namespace cpp_class9 {
-
 	class Window : public Rectangle
 	{
 		friend cpp_class9_test::TestWindow;
 
 	public:
-		enum Style {
+		enum class Style {
 			FENG_SHUI,
 			CHINESE,
 			MODERN
@@ -27,7 +26,7 @@ namespace cpp_class9 {
 		Window(const Window& window)
 			: Rectangle(window.getHeight(), window.getWidth()), m_Style(window.m_Style) {};
 
-		inline Style getStyle() const { return m_Style; };
+		Style getStyle() const { return m_Style; };
 
 		const Window& operator=(const Window& door);
 	};

@@ -1,17 +1,16 @@
 #include "DynamicArray.h"
+#include <assert.h>
 
 namespace cpp_class8 {
-
 	DynamicArray::DynamicArray(const size_t size)
 		: m_Size(size), m_DynamicArray(nullptr)
 	{
 		m_DynamicArray = new int[size];
 
-		if (m_DynamicArray != nullptr)
-			for (size_t i = 0; i < size; i++)
-			{
-				m_DynamicArray[i] = -1;
-			}
+		for (size_t i = 0; i < size; i++)
+		{
+			m_DynamicArray[i] = -1;
+		}
 	}
 
 	DynamicArray::DynamicArray(const DynamicArray& arr)
@@ -19,11 +18,10 @@ namespace cpp_class8 {
 	{
 		m_DynamicArray = new int[m_Size];
 
-		if (m_DynamicArray != nullptr)
-			for (size_t i = 0; i < m_Size; i++)
-			{
-				m_DynamicArray[i] = -1;
-			}
+		for (size_t i = 0; i < m_Size; i++)
+		{
+			m_DynamicArray[i] = -1;
+		}
 
 		for (size_t i = 0; i < m_Size; i++)
 			m_DynamicArray[i] = arr.m_DynamicArray[i];
@@ -36,6 +34,7 @@ namespace cpp_class8 {
 
 	int& DynamicArray::operator[](const size_t index)
 	{
+		assert(index <= m_Size);
 		return m_DynamicArray[index];
 	}
 
@@ -60,7 +59,7 @@ namespace cpp_class8 {
 
 	DynamicArray& DynamicArray::operator+(const DynamicArray& arr)
 	{
-		DynamicArray *clone = new DynamicArray(m_Size + arr.m_Size);
+		DynamicArray* clone = new DynamicArray(m_Size + arr.m_Size);
 
 		for (size_t i = 0; i < m_Size; i++)
 		{

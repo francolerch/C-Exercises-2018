@@ -1,7 +1,6 @@
 #include "House.h"
 
 namespace cpp_class9 {
-
 	unsigned int House::getDoorArea() const
 	{
 		return m_Door.getArea();
