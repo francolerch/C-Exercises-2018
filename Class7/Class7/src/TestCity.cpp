@@ -3,7 +3,7 @@
 namespace cpp_class7_test {
 	using namespace cpp_class7;
 
-	void TestCity::TestConstructor()
+	void TestCity::TestConstructor() const
 	{
 		City testConstructor = City(128);
 
@@ -14,7 +14,7 @@ namespace cpp_class7_test {
 		std::cout << "TestConstructor Test Passed" << std::endl;
 	}
 
-	void TestCity::TestCopyConstructor()
+	void TestCity::TestCopyConstructor() const
 	{
 		City test = City(128);
 		City test2(test);
@@ -26,7 +26,7 @@ namespace cpp_class7_test {
 		std::cout << "TestCopyConstructor Test Passed" << std::endl;
 	}
 
-	void TestCity::TestAddCitizen()
+	void TestCity::TestAddCitizen() const
 	{
 		City testCity = City(1);
 		BirthDate birthDate = BirthDate(31, 8, 1992);
@@ -40,7 +40,7 @@ namespace cpp_class7_test {
 		std::cout << "TestAddCitizen Test Passed" << std::endl;
 	}
 
-	void TestCity::TestGetRetiredCount()
+	void TestCity::TestGetRetiredCount() const
 	{
 		City testCity = City(3);
 
@@ -61,7 +61,7 @@ namespace cpp_class7_test {
 		std::cout << "TestGetRetiredCount Test Passed" << std::endl;
 	}
 
-	void TestCity::TestGetChildCount()
+	void TestCity::TestGetChildCount() const
 	{
 		City testCity = City(3);
 
@@ -79,7 +79,7 @@ namespace cpp_class7_test {
 		std::cout << "TestGetChildCount Test Passed" << std::endl;
 	}
 
-	void TestCity::TestGetManCount()
+	void TestCity::TestGetManCount() const
 	{
 		City testCity = City(3);
 
@@ -97,7 +97,7 @@ namespace cpp_class7_test {
 		std::cout << "TestGetManCount Test Passed" << std::endl;
 	}
 
-	void TestCity::TestGetWomanCount()
+	void TestCity::TestGetWomanCount() const
 	{
 		City testCity = City(3);
 
@@ -115,7 +115,7 @@ namespace cpp_class7_test {
 		std::cout << "TestGetWomanCount Test Passed" << std::endl;
 	}
 
-	void TestCity::TestGetCitizenByName()
+	void TestCity::TestGetCitizenByName() const
 	{
 		City testCity = City(2);
 

@@ -3,7 +3,7 @@
 namespace cpp_class7_test {
 	using namespace cpp_class7;
 
-	void TestBirthDate::TestConstructor()
+	void TestBirthDate::TestConstructor() const
 	{
 		BirthDate testConstructor = BirthDate(4, 5, 1985);
 
@@ -14,7 +14,7 @@ namespace cpp_class7_test {
 		std::cout << "TestConstructor Test Passed" << std::endl;
 	}
 
-	void TestBirthDate::TestCopyConstructor()
+	void TestBirthDate::TestCopyConstructor() const
 	{
 		BirthDate testConstructor = BirthDate(2, 2, 1990);
 		BirthDate testCopy = BirthDate(testConstructor);
@@ -26,8 +26,7 @@ namespace cpp_class7_test {
 		std::cout << "TestCopyConstructor Test Passed" << std::endl;
 	}
 
-
-	void TestBirthDate::TestGetDay()
+	void TestBirthDate::TestGetDay() const
 	{
 		BirthDate test = BirthDate(5, 10, 1998);
 
@@ -36,8 +35,7 @@ namespace cpp_class7_test {
 		std::cout << "TestGetDay Test Passed" << std::endl;
 	}
 
-
-	void TestBirthDate::TestGetMonth()
+	void TestBirthDate::TestGetMonth() const
 	{
 		BirthDate test = BirthDate(5, 10, 1998);
 
@@ -46,17 +44,17 @@ namespace cpp_class7_test {
 		std::cout << "TestGetMonth Test Passed" << std::endl;
 	}
 
-
-	void TestBirthDate::TestGetYear()
+	void TestBirthDate::TestGetYear() const
 	{
-		BirthDate test = BirthDate(5, 10, 1998);
+		const
+			BirthDate test = BirthDate(5, 10, 1998);
 
 		assert(test.getYear() == 1998);
 
 		std::cout << "TestGetYear Test Passed" << std::endl;
 	}
 
-	void TestBirthDate::TestToString()
+	void TestBirthDate::TestToString() const
 	{
 		BirthDate test = BirthDate(5, 8, 2001);
 
@@ -65,7 +63,7 @@ namespace cpp_class7_test {
 		std::cout << "TestToString Test Passed" << std::endl;
 	}
 
-	void TestBirthDate::TestGetZodiacSign()
+	void TestBirthDate::TestGetZodiacSign() const
 	{
 		BirthDate test0 = BirthDate(31, 8, 1992);
 		BirthDate test1 = BirthDate(31, 1, 1990);
@@ -78,7 +76,7 @@ namespace cpp_class7_test {
 		std::cout << "TestGetZodiacSign Test Passed" << std::endl;
 	}
 
-	void TestBirthDate::TestGetAge()
+	void TestBirthDate::TestGetAge() const
 	{
 		BirthDate test0 = BirthDate(31, 8, 1992);
 		BirthDate test1 = BirthDate(1, 1, 1992);

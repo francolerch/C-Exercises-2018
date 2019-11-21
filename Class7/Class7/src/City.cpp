@@ -1,7 +1,6 @@
 #include "City.h"
 
 namespace cpp_class7 {
-
 	City::City(const unsigned int maxPop) :
 		m_maxPop(maxPop), m_lastPop(0)
 	{
@@ -36,13 +35,13 @@ namespace cpp_class7 {
 					return false;
 				}
 			}
-		
+
 			m_citizen[m_lastPop] = citizen;
 			m_lastPop++;
 
 			return true;
 		}
-		
+
 		return false;
 	}
 
@@ -62,7 +61,7 @@ namespace cpp_class7 {
 	}
 
 	unsigned int City::getChildCount() const
-	{ 
+	{
 		unsigned int childCount = 0;
 
 		for (unsigned int i = 0; i < m_lastPop; i++)
@@ -121,7 +120,7 @@ namespace cpp_class7 {
 		return femaleCount;
 	}
 
-	Citizen* City::getCitizenByName(const std::string name, const std::string lastName) const
+	Citizen* City::getCitizenByName(const std::string& name, const std::string& lastName) const
 	{
 		for (unsigned int i = 0; i < m_lastPop; i++)
 		{

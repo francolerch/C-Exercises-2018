@@ -4,19 +4,18 @@
 #include <iostream>
 
 namespace cpp_class7_test {
-
 	class TestCitizen {
 	public:
 		TestCitizen() = default;
 
-		void TestConstructor();
-		void TestCopyConstructor();
-		void TestGetBirthDate();
-		void TestGetName();
-		void TestGetGender();
-		void TestIsAdult();
-		void TestIsTeenager();
-		void TestIsChild();
-		void TestIsRetired();
+		void TestConstructor() const;
+		void TestCopyConstructor() const;
+		void TestGetBirthDate() const;
+		void TestGetName() const;
+		void TestGetGender() const;
+		void TestIsAdult() const;
+		void TestIsTeenager() const;
+		void TestIsChild() const;
+		void TestIsRetired() const;
 	};
 }

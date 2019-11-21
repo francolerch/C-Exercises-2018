@@ -7,7 +7,7 @@ namespace cpp_class7_test {
 	std::string lastName = "Sanchez";
 	BirthDate birthDate = BirthDate(20, 11, 1954);
 
-	void TestCitizen::TestConstructor()
+	void TestCitizen::TestConstructor() const
 	{
 		Citizen::Gender gender = Citizen::Gender::MALE;
 
@@ -22,7 +22,7 @@ namespace cpp_class7_test {
 		std::cout << "TestConstructor Test Passed" << std::endl;
 	}
 
-	void TestCitizen::TestCopyConstructor()
+	void TestCitizen::TestCopyConstructor() const
 	{
 		birthDate = BirthDate(20, 11, 1954);
 		Citizen::Gender gender = Citizen::Gender::MALE;
@@ -39,7 +39,7 @@ namespace cpp_class7_test {
 		std::cout << "TestCopyConstructor Test Passed" << std::endl;
 	}
 
-	void TestCitizen::TestGetBirthDate()
+	void TestCitizen::TestGetBirthDate() const
 	{
 		birthDate = BirthDate(20, 11, 1954);
 		Citizen::Gender gender = Citizen::Gender::MALE;
@@ -53,7 +53,7 @@ namespace cpp_class7_test {
 		std::cout << "TestGetBirthDate Test Passed" << std::endl;
 	}
 
-	void TestCitizen::TestGetName()
+	void TestCitizen::TestGetName() const
 	{
 		birthDate = BirthDate(20, 11, 1954);
 		Citizen::Gender gender = Citizen::Gender::MALE;
@@ -62,11 +62,10 @@ namespace cpp_class7_test {
 
 		assert(test.getName() == test.getName());
 
-
 		std::cout << "TestGetName Test Passed" << std::endl;
 	}
 
-	void TestCitizen::TestGetGender()
+	void TestCitizen::TestGetGender() const
 	{
 		birthDate = BirthDate(20, 11, 1954);
 		Citizen::Gender gender = Citizen::Gender::MALE;
@@ -78,7 +77,7 @@ namespace cpp_class7_test {
 		std::cout << "TestGetGender Test Passed" << std::endl;
 	}
 
-	void TestCitizen::TestIsAdult()
+	void TestCitizen::TestIsAdult() const
 	{
 		birthDate = BirthDate(20, 11, 1954);
 		Citizen::Gender gender = Citizen::Gender::MALE;
@@ -95,7 +94,7 @@ namespace cpp_class7_test {
 		std::cout << "TestIsAdult Test Passed" << std::endl;
 	}
 
-	void TestCitizen::TestIsTeenager()
+	void TestCitizen::TestIsTeenager() const
 	{
 		birthDate = BirthDate(20, 11, 2002);
 		Citizen::Gender gender = Citizen::Gender::MALE;
@@ -117,7 +116,7 @@ namespace cpp_class7_test {
 		std::cout << "TestIsTeenager Test Passed" << std::endl;
 	}
 
-	void TestCitizen::TestIsChild()
+	void TestCitizen::TestIsChild() const
 	{
 		birthDate = BirthDate(20, 11, 2010);
 		Citizen::Gender gender = Citizen::Gender::MALE;
@@ -134,7 +133,7 @@ namespace cpp_class7_test {
 		std::cout << "TestIsChild Test Passed" << std::endl;
 	}
 
-	void TestCitizen::TestIsRetired()
+	void TestCitizen::TestIsRetired() const
 	{
 		birthDate = BirthDate(20, 11, 1940);
 		Citizen::Gender gender = Citizen::Gender::MALE;

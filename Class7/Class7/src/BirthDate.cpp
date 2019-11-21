@@ -1,20 +1,17 @@
 #include "BirthDate.h"
 
 namespace cpp_class7 {
-
 	BirthDate::BirthDate(unsigned int m_Day, unsigned int m_Month, unsigned int m_Year)
 		: m_Day(m_Day), m_Month(m_Month), m_Year(m_Year)
 	{
-
 	}
 
 	BirthDate::BirthDate(const BirthDate& m_BirthDate)
 		: m_Day(m_BirthDate.m_Day), m_Month(m_BirthDate.m_Month), m_Year(m_BirthDate.m_Year)
 	{
-
 	}
 
-	std::string BirthDate::toString() const
+	const std::string BirthDate::toString() const
 	{
 		return std::to_string(m_Year) + "/" + std::to_string(m_Day) + "/" + std::to_string(m_Month);
 	}
@@ -97,6 +94,5 @@ namespace cpp_class7 {
 		if (m_Month == 1 && m_Day == 1)
 			return 2019 - m_Year;
 		return 2019 - m_Year - 1;
-
 	}
 }

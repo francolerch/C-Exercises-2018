@@ -4,19 +4,18 @@
 #include <iostream>
 
 namespace cpp_class7_test {
-
 	class TestBirthDate
 	{
 	public:
 		TestBirthDate() {};
 
-		void TestConstructor();
-		void TestCopyConstructor();
-		void TestGetDay();
-		void TestGetMonth();
-		void TestGetYear();
-		void TestToString();
-		void TestGetZodiacSign();
-		void TestGetAge();
+		void TestConstructor() const;
+		void TestCopyConstructor() const;
+		void TestGetDay() const;
+		void TestGetMonth() const;
+		void TestGetYear() const;
+		void TestToString() const;
+		void TestGetZodiacSign() const;
+		void TestGetAge() const;
 	};
 }

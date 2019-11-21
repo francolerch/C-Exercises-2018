@@ -28,10 +28,10 @@ namespace cpp_class7 {
 		BirthDate(unsigned int m_Day, unsigned int m_Month, unsigned int m_Year);
 		BirthDate(const BirthDate& m_BirthDate);
 
-		inline unsigned int getDay() const { return m_Day; };
-		inline unsigned int getMonth() const { return m_Month; };
-		inline unsigned int getYear() const { return m_Year; };
-		std::string toString() const;
+		unsigned int getDay() const { return m_Day; };
+		unsigned int getMonth() const { return m_Month; };
+		unsigned int getYear() const { return m_Year; };
+		const std::string toString() const;
 		ZodiacSign getZodiacSign() const;
 		unsigned int getAge() const;
 

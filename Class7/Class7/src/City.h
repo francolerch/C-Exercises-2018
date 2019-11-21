@@ -20,12 +20,11 @@ namespace cpp_class7 {
 		unsigned int getTeenagerCount() const;
 		unsigned int getManCount() const;
 		unsigned int getWomanCount() const;
-		Citizen* getCitizenByName(const std::string name, const std::string lastName) const;
+		Citizen* getCitizenByName(const std::string& name, const std::string& lastName) const;
 
 	private:
 		Citizen* m_citizen;
 		unsigned int m_maxPop;
 		unsigned int m_lastPop;
-
 	};
 }
