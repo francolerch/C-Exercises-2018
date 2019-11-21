@@ -16,7 +16,7 @@ namespace cpp_class11
 		friend cpp_class11_test::TestTeacher;
 		friend std::ostream& operator<<(std::ostream& os, const Teacher& teacher);
 
-		enum Grade {
+		enum class Grade {
 			KINDERGARTEN = 0,
 			PRIMARY,
 			SECONDARY,
@@ -30,6 +30,6 @@ namespace cpp_class11
 			const int salary, const Grade& grade)
 			: Person(name, lastName, dni), Employee(employer, salary), m_Grade(grade) {};
 
-		inline Grade getGrade() const { return m_Grade; }
+		Grade getGrade() const { return m_Grade; }
 	};
 }

@@ -16,7 +16,7 @@ namespace cpp_class11
 
 	private:
 		std::string m_Employer;
-		int m_Salary;
+		unsigned int m_Salary;
 
 	public:
 		Employee(const std::string& employer, const int salary)
@@ -24,11 +24,11 @@ namespace cpp_class11
 		Employee(const Employee& employee)
 			: m_Employer(employee.m_Employer), m_Salary(employee.m_Salary) {};
 
-		Employee& operator=(const Employee& employee);
+		const Employee& operator=(const Employee& employee);
 
-		inline std::string getEmployer() const { return m_Employer; };
-		inline int getSalary() const { return m_Salary; }
-		inline void setEmployer(std::string& employer) { m_Employer = employer; };
-		inline void setSalary(int salary) { m_Salary = salary; };
+		std::string getEmployer() const { return m_Employer; };
+		unsigned int getSalary() const { return m_Salary; }
+		void setEmployer(std::string& employer) { m_Employer = employer; };
+		void setSalary(unsigned int salary) { m_Salary = salary; };
 	};
 }

@@ -5,16 +5,16 @@ std::ostream& cpp_class11::operator<<(std::ostream& os, const Doctor& doctor)
 	std::string specialtyStr;
 	switch (doctor.getSpecialty())
 	{
-	case 0:
+	case Doctor::Specialty::PSYCHIATRY:
 		specialtyStr = "Psychiatry";
 		break;
-	case 1:
+	case Doctor::Specialty::DERMATOLOGY:
 		specialtyStr = "Dermatology";
 		break;
-	case 2:
+	case Doctor::Specialty::ANESTHESIOLOGY:
 		specialtyStr = "Anesthesiology";
 		break;
-	case 3:
+	case Doctor::Specialty::CARDIOLOGY:
 		specialtyStr = "Cardiology";
 		break;
 	}

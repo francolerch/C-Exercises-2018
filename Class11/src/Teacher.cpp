@@ -1,22 +1,21 @@
 #include "Teacher.h"
 
 namespace cpp_class11 {
-
 	std::ostream& operator<<(std::ostream& os, const Teacher& teacher)
 	{
 		std::string gradeStr;
 		switch (teacher.getGrade())
 		{
-		case 0:
+		case Teacher::Grade::KINDERGARTEN:
 			gradeStr = "Kindergarten";
 			break;
-		case 1:
+		case Teacher::Grade::PRIMARY:
 			gradeStr = "Primary";
 			break;
-		case 2:
+		case Teacher::Grade::SECONDARY:
 			gradeStr = "Secondary";
 			break;
-		case 3:
+		case Teacher::Grade::UNIVERSITY:
 			gradeStr = "University";
 			break;
 		}

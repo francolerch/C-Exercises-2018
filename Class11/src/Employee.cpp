@@ -1,8 +1,7 @@
 #include "Employee.h"
 
 namespace cpp_class11 {
-
-	Employee& Employee::operator=(const Employee& employee)
+	const Employee& Employee::operator=(const Employee& employee)
 	{
 		if (this == &employee)
 			return *this;

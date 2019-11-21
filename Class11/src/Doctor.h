@@ -16,7 +16,7 @@ namespace cpp_class11
 		friend cpp_class11_test::TestDoctor;
 		friend std::ostream& operator<<(std::ostream& os, const Doctor& doctor);
 
-		enum Specialty {
+		enum class Specialty {
 			PSYCHIATRY = 0,
 			DERMATOLOGY,
 			ANESTHESIOLOGY,
@@ -30,6 +30,6 @@ namespace cpp_class11
 			const int salary, const Specialty& specialty)
 			: Person(name, lastName, dni), Employee(employer, salary), m_Specialty(specialty) {};
 
-		inline Specialty getSpecialty() const { return m_Specialty; }
+		Specialty getSpecialty() const { return m_Specialty; }
 	};
 }

@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="src\Archer.cpp" />
     <ClCompile Include="src\Barbarian.cpp" />
+    <ClCompile Include="src\Battle.cpp" />
     <ClCompile Include="src\Character.cpp" />
     <ClCompile Include="src\Druid.cpp" />
     <ClCompile Include="src\Main.cpp" />
