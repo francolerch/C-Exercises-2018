@@ -19,11 +19,6 @@ namespace cpp_class8 {
 		m_DynamicArray = new int[m_Size];
 
 		for (size_t i = 0; i < m_Size; i++)
-		{
-			m_DynamicArray[i] = -1;
-		}
-
-		for (size_t i = 0; i < m_Size; i++)
 			m_DynamicArray[i] = arr.m_DynamicArray[i];
 	}
 
